@@ -102,7 +102,7 @@ void clear(Stack& s) {
     Node* hapus;
     while (s.top != nullptr)
     {
-        Node* temp = s.top;
+        Node* hapus = s.top;
         s.top = s.top -> next;
         delete hapus;
     }
@@ -110,13 +110,13 @@ void clear(Stack& s) {
 
 // SOAL 4
 bool kurungSeimbang(const string& ekspresi) {
-    stack temp;
+    Stack temp;
     inisialisasi(temp);
-    for (int i = 0; i < ekspresi.length; i++)
-    {
+
+    for (int i = 0; i < ekspresi.length(); i++){
         char c= ekspresi[i];
-        if (c == '('|| c == '{'||c == '[')
-        {
+
+        if (c == '('|| c == '{'||c == '['){
             push(temp,c);
         }else if (c == ')'|| c == '}'|| c==']')
         {
